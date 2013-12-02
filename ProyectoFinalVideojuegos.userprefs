@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\PlayerMovement_02.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\LanzarGolpe.js">
     <Files>
-      <File FileName="Assets\PlayerMovement_02.js" Line="22" Column="5" />
+      <File FileName="Assets\LanzarGolpe.js" Line="25" Column="4" />
+      <File FileName="Assets\PlayerMovement_02.js" Line="16" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
