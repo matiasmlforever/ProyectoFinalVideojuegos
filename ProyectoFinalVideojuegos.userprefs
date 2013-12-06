@@ -1,9 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\LanzarGolpe.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Custom Assets\Scripts\LanzarGolpe.js">
     <Files>
-      <File FileName="Assets\LanzarGolpe.js" Line="25" Column="4" />
-      <File FileName="Assets\PlayerMovement_02.js" Line="16" Column="36" />
+      <File FileName="Assets\Custom Assets\Scripts\LanzarGolpe.js" Line="53" Column="75" />
+      <File FileName="Assets\Custom Assets\Scripts\PlayerMovement.js" Line="16" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

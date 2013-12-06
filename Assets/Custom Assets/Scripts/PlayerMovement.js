@@ -7,7 +7,55 @@
 	var jumpSpeed : float = 8.0;
 	var gravity : float = 20.0;
 	private var moveDirection : Vector3 = Vector3.zero;
+	var facingLeft = true;
+	var agachado = false;
 	function Update() {
+		/*GIRA EL SPRITE*/
+		if(Input.GetAxis("Horizontal")>0)
+		{ 
+			if(facingLeft)
+			{
+				transform.localScale.x *= -1; 
+				facingLeft = false;
+			}
+		}
+		if(Input.GetAxis("Horizontal")<0)
+		{
+			if(!facingLeft)
+			{
+				transform.localScale.x *= -1; 
+				facingLeft = true;
+			}
+		}/*FIN GIRO SPRITE*/
+		
+		
+		
+		/*INPUT AGACHA AL PERSONAJE*/
+		if(Input.GetKey(KeyCode.C))
+		{
+			agachado = true;
+			Debug.Log("esta agachado: "+agachado.ToString());
+		
+		}else if(agachado)
+		{
+			agachado=false;
+		}
+		//else agachado = true;
+		
+		
+		//AGACHA EL GAMEOBJECT
+		if(agachado)
+		{ 
+			if(transform.localScale.y==1)transform.localPosition.y-=1;
+			transform.localScale.y *= 0.5;
+		}else 
+		{
+			if(transform.localScale.y<1)transform.localPosition.y+=2;
+			transform.localScale.y=1;
+		}
+		/*FIN AGACHAR PERSONAJE*/
+		
+		//CONTROLA MOVIMIENTO
 		var controller : CharacterController = GetComponent(CharacterController);
 		if (controller.isGrounded) {
 			// We are grounded, so recalculate
