@@ -47,9 +47,12 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Custom Assets\Scripts\EnemyMovement.js" />
+     <Compile Include="Assets\Custom Assets\Scripts\EnemyStatsHandler.js" />
      <Compile Include="Assets\Custom Assets\Scripts\GameCamera.js" />
+     <Compile Include="Assets\Custom Assets\Scripts\Heal.js" />
      <Compile Include="Assets\Custom Assets\Scripts\LanzarGolpe.js" />
      <Compile Include="Assets\Custom Assets\Scripts\PlayerMovement.js" />
+     <Compile Include="Assets\Custom Assets\Scripts\PlayerStatsHandler.js" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
      <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />

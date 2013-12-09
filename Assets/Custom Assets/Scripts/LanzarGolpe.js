@@ -3,6 +3,7 @@ public var fuerza_punio: float;
 public var fuerza_patada:float;
 public var raycast_distance:float;
 public var isCrouching:int = 0;
+private var enemigo_receptor:EnemyStatsHandler;
 function Start () {
 
 }
@@ -34,6 +35,8 @@ function Update () {
 				//hit_alto.rigidbody.AddForce(Vector3.right * fuerza_golpe);
 				hit_punio.rigidbody.AddForceAtPosition((transform.localScale.x)*Vector3.left * fuerza_punio,hit_punio.point);
 				Debug.Log(hit_punio.collider.gameObject.name);
+				enemigo_receptor = hit_punio.collider.gameObject.GetComponent(EnemyStatsHandler);
+				enemigo_receptor.takeHit(fuerza_punio,r_o_l_punch,hit_punio.point);
 			}
 		}
 	}
@@ -47,7 +50,7 @@ function Update () {
 		}
 		else{
 			Debug.Log("PATADA DERECHA"); 
-			r_o_l_kick = 2; 
+			r_o_l_kick = 2; //RIGHT
 		}//RIGHT
 		var hit_kick : RaycastHit;
 		var lugar_origen_low = Vector3(transform.position.x,transform.position.y,transform.position.z);
@@ -59,6 +62,8 @@ function Update () {
 				Debug.Log("Hay receptor de patada");
 				hit_kick.rigidbody.AddForceAtPosition((transform.localScale.x)*Vector3.left * fuerza_patada,hit_kick.point);
 				Debug.Log(hit_kick.collider.gameObject.name);
+				enemigo_receptor = hit_kick.collider.gameObject.GetComponent(EnemyStatsHandler);
+				enemigo_receptor.takeHit(fuerza_patada,r_o_l_kick,hit_kick.point);
 			}
 		}
 	}
