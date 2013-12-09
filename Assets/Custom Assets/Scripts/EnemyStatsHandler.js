@@ -1,7 +1,7 @@
 ﻿#pragma strict
 public var HPBAR:GameObject;
 public var max_hp:int;
-private var current_hp:int;
+public var current_hp:int;
 public var armor:int;
 private var escala_local_barra:float=1;
 
@@ -15,7 +15,8 @@ function Update () {
 	if(current_hp <= 0)//si baja de 0 se destruye el enemigo
 	{
 			Destroy(gameObject);
-			Destroy(HPBAR);
+			HPBAR.transform.localScale.x = 1; //resetea la barra
+			//Destroy(HPBAR);
 	}
 	
 }

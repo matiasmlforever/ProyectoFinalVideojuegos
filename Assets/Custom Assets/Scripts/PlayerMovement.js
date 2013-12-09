@@ -9,6 +9,15 @@
 	private var moveDirection : Vector3 = Vector3.zero;
 	var facingLeft = true;
 	var agachado = false;
+	public var blocking = false;
+	private var sprite:SpriteRenderer;
+	
+	function Start()
+	{
+		sprite = gameObject.GetComponentInChildren(SpriteRenderer);
+	
+	}
+	
 	function Update() {
 		/*GIRA EL SPRITE*/
 		if(Input.GetAxis("Horizontal")>0)
@@ -27,6 +36,22 @@
 				facingLeft = true;
 			}
 		}/*FIN GIRO SPRITE*/
+		
+		
+		/*INPUT HACE QUE EL PERSONAJE BLOQUEE*/
+		if(Input.GetKey(KeyCode.Y))
+		{
+			blocking = true;
+			Debug.Log("esta bloqueando: "+blocking.ToString());
+			moveDirection = Vector3.zero;
+			sprite.color= Color.green;
+			
+		
+		}else if(blocking)
+		{
+			blocking=false;
+			sprite.color= Color.white;
+		}
 		
 		
 		
@@ -57,7 +82,7 @@
 		
 		//CONTROLA MOVIMIENTO
 		var controller : CharacterController = GetComponent(CharacterController);
-		if (controller.isGrounded) {
+		if (controller.isGrounded && !blocking) {
 			// We are grounded, so recalculate
 			// move direction directly from axes
 			moveDirection = Vector3(Input.GetAxis("Horizontal"), 0,
