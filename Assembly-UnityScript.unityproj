@@ -54,6 +54,7 @@
      <Compile Include="Assets\Custom Assets\Scripts\PlayerMovement.js" />
      <Compile Include="Assets\Custom Assets\Scripts\PlayerStatsHandler.js" />
      <Compile Include="Assets\EnemyAttack.js" />
+     <Compile Include="Assets\feed_animator.js" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
      <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />
