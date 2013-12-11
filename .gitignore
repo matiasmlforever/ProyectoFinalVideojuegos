@@ -1,3 +1,8 @@
-/Library/metadata
+/Library
+
 *.meta
+
 /Temp
+*.csproj
+*.unityproj
+*.sln
