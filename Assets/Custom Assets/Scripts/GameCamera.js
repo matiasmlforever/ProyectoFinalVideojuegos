@@ -10,4 +10,7 @@ function Update () {
 
 	if(Input.GetKey(KeyCode.Escape))
 		Application.LoadLevel("MainMenu");
+	
+	if(Input.GetKey(KeyCode.P))
+		Application.LoadLevel(Application.loadedLevel);
 }
