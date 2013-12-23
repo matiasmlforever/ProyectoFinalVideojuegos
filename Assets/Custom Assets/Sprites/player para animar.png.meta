@@ -67,9 +67,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 170
-        y: 351
+        y: 361
         width: 35
-        height: 95
+        height: 85
       alignment: 2
       pivot: {x: .5, y: 1}
     - name: player para animar_3
@@ -84,9 +84,9 @@ TextureImporter:
     - name: player para animar_4
       rect:
         serializedVersion: 2
-        x: 54
+        x: 51
         y: 164
-        width: 62
+        width: 65
         height: 46
       alignment: 0
       pivot: {x: .5, y: .5}
@@ -94,9 +94,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 145
-        y: 133
+        y: 141
         width: 58
-        height: 42
+        height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
     - name: player para animar_6
@@ -105,7 +105,7 @@ TextureImporter:
         x: 235
         y: 88
         width: 80
-        height: 112
+        height: 107
       alignment: 2
       pivot: {x: .5, y: 1}
   spritePackingTag: 
