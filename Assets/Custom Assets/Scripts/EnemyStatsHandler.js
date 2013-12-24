@@ -1,6 +1,6 @@
 ﻿#pragma strict
 public var HPBAR:GameObject;
-public var max_hp:int;
+public var max_hp:int = 1000;
 public var current_hp:int;
 public var armor:int;
 private var escala_local_barra:float=1;
@@ -58,4 +58,13 @@ public function getCurrentHP()
 public function heal(amount:int)
 {
 	current_hp=current_hp+amount;
+}
+
+public function lleno(){
+
+	if(current_hp == max_hp)
+		return true;
+	else
+		return false;
+
 }
