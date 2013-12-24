@@ -46,15 +46,17 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Custom Assets\Scripts\EnemyAttack.js" />
      <Compile Include="Assets\Custom Assets\Scripts\EnemyMovement.js" />
+     <Compile Include="Assets\Custom Assets\Scripts\EnemySpawn.js" />
      <Compile Include="Assets\Custom Assets\Scripts\EnemyStatsHandler.js" />
      <Compile Include="Assets\Custom Assets\Scripts\GameCamera.js" />
      <Compile Include="Assets\Custom Assets\Scripts\Heal.js" />
+     <Compile Include="Assets\Custom Assets\Scripts\HealthBar.js" />
      <Compile Include="Assets\Custom Assets\Scripts\LanzarGolpe.js" />
      <Compile Include="Assets\Custom Assets\Scripts\MainMenu.js" />
      <Compile Include="Assets\Custom Assets\Scripts\PlayerMovement.js" />
      <Compile Include="Assets\Custom Assets\Scripts\PlayerStatsHandler.js" />
-     <Compile Include="Assets\EnemyAttack.js" />
      <Compile Include="Assets\PosteLuz.js" />
      <Compile Include="Assets\feed_animator.js" />
   </ItemGroup>

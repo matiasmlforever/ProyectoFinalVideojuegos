@@ -7,14 +7,16 @@
 	
 	var facingLeft = true;
 	var agachado = false;
-	public var player1 : GameObject;
+	var player1 : GameObject;
 		
 	// Speed in units per sec.
 	var speed: float;
 	var x2: float;
+	var flag1: int = 0;
 	
 	function Start() {
 		x2 = transform.position.x;
+		player1 = GameObject.Find("3d Chileno");
 
 	}
 
@@ -22,46 +24,42 @@
 		// The step size is equal to speed times frame time.
 		var step = speed * Time.deltaTime;
 		
-		// Move our position a step closer to the target.
-		transform.position = Vector3.MoveTowards(transform.position, player1.transform.position, step);
-		/*GIRA EL SPRITE*/
-		var x1 : float = transform.position.x;
-		if(x2>x1)
-		{
-				transform.localScale.x = 1;
-				x2 = transform.position.x;
-		}else{
-				transform.localScale.x = -1;
-				x2 = transform.position.x;
+		// si la vida esta llena camina tranquilo
+		if(this.GetComponent(EnemyStatsHandler).lleno){
+			if(this.transform.position != Vector3(1448,3501,-4668) && flag1 == 0){ //si no ha llegado al cruce del mapa
+				transform.position = Vector3.MoveTowards(transform.position, Vector3(1448,3501,-4668), step);
+				if(this.transform.position == Vector3(1448,3501,-4668))
+					flag1 = 1;
+			}else{ // si ya llego al cruce
+				transform.position = Vector3.MoveTowards(transform.position, Vector3(1660,3501,-4668), step);
+				if(this.transform.position.x > 1655){
+					Destroy (gameObject);
+				}
+			}
 		}
-		/*FIN GIRO SPRITE*/
+		//si le pegaron
+		else{
 		
-		
-		
-		/*INPUT AGACHA AL PERSONAJE*/
-		/*if(Input.GetKey(KeyCode.C))
+		// Move our position a step closer to the target.
+		if(( 6 > Mathf.Abs(player1.transform.position.x - transform.position.x))
+		&& 1 > Mathf.Abs(player1.transform.position.z - transform.position.z))
 		{
-			agachado = true;
-			Debug.Log("esta agachado: "+agachado.ToString());
-		
-		}else if(agachado)
-		{
-			agachado=false;
-		}*/
-		//else agachado = true;
-		
-		
-		//AGACHA EL GAMEOBJECT
-		/*if(agachado)
-		{ 
-			if(transform.localScale.y==1)transform.localPosition.y-=1;
-			transform.localScale.y *= 0.5;
-		}else 
-		{
-			if(transform.localScale.y<1)transform.localPosition.y+=2;
-			transform.localScale.y=1;
-		}*/
-		/*FIN AGACHAR PERSONAJE*/
-
+			
+		}else{
+			transform.position = Vector3.MoveTowards(transform.position, player1.transform.position, step);
+			var x1 : float = transform.position.x;
+			if(x2>x1)
+			{
+					transform.localScale.x = 1;
+					x2 = transform.position.x;
+			}else{
+					transform.localScale.x = -1;
+					x2 = transform.position.x;
+			}
+		}/*GIRA EL SPRITE*/
+		}
 
 	}
+	
+	
+	
