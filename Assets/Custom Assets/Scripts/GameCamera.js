@@ -2,11 +2,11 @@
 
 public var personaje:Transform;
 
-private var savedTimeScale:float;
+private var savedTimeScale:float = 1.0;
 private var isOnPause:boolean = false;
 
 function Start () {
-
+	UnPauseGame();
 }
 
 function Update () {

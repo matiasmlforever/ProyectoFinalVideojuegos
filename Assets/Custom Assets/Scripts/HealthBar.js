@@ -7,6 +7,7 @@ var fgImage : Texture2D; // foreground image that is 256 x 32
 static var playerEnergy = 1.0; // a float between 0.0 and 1.0
  
 function Start() {
+	playerEnergy = 1.0;
 }
  
 function Update() {
@@ -20,13 +21,15 @@ function OnGUI () {
 	if(playerEnergy <= 0)
 		{
 			Debug.Log("PERDISTEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+			
+			if(GUI.Button(Rect(Screen.width/3 + 10, Screen.height/3 + 90, Screen.width/3 - 20, 40), "¡PERDISTE!"))
+				Application.LoadLevel("MainMenu");
 			Time.timeScale = 0;
 			audio.Pause();
-			GUI.Label (Rect (100,100,256,32), "PERDISTEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE!");
 		}
 
 	// Create one Group to contain both images , the first two numbers define the on screen placement
-	GUI.Label(Rect(10, 50, 256, 32), "Jugador (" + playerEnergy * 100 + "/ " + 100 + ")");
+	GUI.Label(Rect(10, 50, 256, 32), "Jugador (" + playerEnergy * 100 + "/" + 100 + ")");
 	GUI.BeginGroup (Rect (10,10,256,32));
 	 
 		// Draw the background image

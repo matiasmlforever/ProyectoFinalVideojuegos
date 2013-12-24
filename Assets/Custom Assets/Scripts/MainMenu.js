@@ -79,7 +79,7 @@ function MainMenu()
  
 function PlayMenu()
 {
-		GUI.Box(Rect (paddingLeft - 10, 10, paddingLeft + 20,boxHeight), "Comenzar a jugar", titleStyle);
+	GUI.Box(Rect (paddingLeft - 10, 10, paddingLeft + 20,boxHeight), "Comenzar a jugar", titleStyle);
 		var acumV = 200;		
 
     if (GUI.Button (Rect(paddingLeft, acumV, paddingLeft,40), "Empezar Stage 1"))
