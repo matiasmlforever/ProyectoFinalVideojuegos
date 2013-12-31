@@ -57,6 +57,7 @@
      <Compile Include="Assets\Custom Assets\Scripts\MainMenu.js" />
      <Compile Include="Assets\Custom Assets\Scripts\PlayerMovement.js" />
      <Compile Include="Assets\Custom Assets\Scripts\PlayerStatsHandler.js" />
+     <Compile Include="Assets\JointerBreak.js" />
      <Compile Include="Assets\PosteLuz.js" />
      <Compile Include="Assets\feed_animator.js" />
   </ItemGroup>
