@@ -17,7 +17,6 @@
 	function Start() {
 		x2 = transform.position.x;
 		player1 = GameObject.Find("3d Chileno");
-
 	}
 
 	function Update() {

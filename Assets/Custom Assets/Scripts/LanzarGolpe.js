@@ -25,12 +25,12 @@ function Update () {
 		{	
 			var r_o_l_punch:int;
 			if(Input.GetKeyDown(KeyCode.U)){
-				Debug.Log("PUÑO IZQUIERDO");
+				//Debug.Log("PUÑO IZQUIERDO");
 				r_o_l_punch = 1; //LEFT
 				AudioSource.PlayClipAtPoint(punchSound, transform.position); //hacer sonar golpe puño
 			}
 			else{
-				Debug.Log("PUÑO DERECHO"); 
+				//Debug.Log("PUÑO DERECHO"); 
 				r_o_l_punch=2; 
 				AudioSource.PlayClipAtPoint(punch2Sound, transform.position); //hacer sonar golpe puño 2
 			}//RIGHT
@@ -46,7 +46,7 @@ function Update () {
 					Debug.Log("Hay receptor de puño");
 					//hit_alto.rigidbody.AddForce(Vector3.right * fuerza_golpe);
 					hit_punio.rigidbody.AddForceAtPosition((transform.localScale.x)*Vector3.left * fuerza_punio,hit_punio.point);
-					Debug.Log(hit_punio.collider.gameObject.name);
+					//Debug.Log(hit_punio.collider.gameObject.name);
 					enemigo_receptor = hit_punio.collider.gameObject.GetComponent(EnemyStatsHandler);
 					enemigo_receptor.takeHit(fuerza_punio,r_o_l_punch,hit_punio.point);
 				}
@@ -59,12 +59,12 @@ function Update () {
 
 			var r_o_l_kick:int;
 			if(Input.GetKeyDown(KeyCode.J)){
-				Debug.Log("PATADA IZQUIERDA");
+				//Debug.Log("PATADA IZQUIERDA");
 				r_o_l_kick = 1; //LEFT
 				AudioSource.PlayClipAtPoint(kickSound, transform.position); //hacer sonar golpe patada
 			}
 			else{
-				Debug.Log("PATADA DERECHA"); 
+				//Debug.Log("PATADA DERECHA"); 
 				r_o_l_kick = 2; //RIGHT
 				AudioSource.PlayClipAtPoint(kick2Sound, transform.position); //hacer sonar golpe patada 2
 			}//RIGHT
@@ -77,7 +77,7 @@ function Update () {
 				{
 					Debug.Log("Hay receptor de patada");
 					hit_kick.rigidbody.AddForceAtPosition((transform.localScale.x)*Vector3.left * fuerza_patada,hit_kick.point);
-					Debug.Log(hit_kick.collider.gameObject.name);
+					//Debug.Log(hit_kick.collider.gameObject.name);
 					enemigo_receptor = hit_kick.collider.gameObject.GetComponent(EnemyStatsHandler);
 					enemigo_receptor.takeHit(fuerza_patada,r_o_l_kick,hit_kick.point);
 				}

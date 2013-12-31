@@ -4,11 +4,16 @@ var energyBar : GUIStyle ;
  
 var bgImage : Texture2D; //color dañado
 var fgImage : Texture2D; //color original
+
 static var playerEnergy = 100; 
+static var playerMoney = 1000; 
+
 var gameOver : boolean = false;
+var kills : int = 0;
 
 //sonido
 var itemSound:AudioClip;
+var coinsSound:AudioClip;
  
 function Start() {
 	playerEnergy = 98;
@@ -33,8 +38,16 @@ function changeHP(amount:int){
 		playerEnergy = tempEnergy;
 
 	AudioSource.PlayClipAtPoint(itemSound, transform.position);
-	Debug.Log("Modificando vida en ("+amount+")");	
+	Debug.Log("Modificando vida en (" + amount + ")");	
 
+}
+
+function changeMoney(amount:int)
+{
+	var tempMoney = playerMoney + amount;
+	playerMoney = tempMoney;
+	AudioSource.PlayClipAtPoint(coinsSound, transform.position);
+	Debug.Log("Modificando dinero en (" + amount + ")");	
 }
 
 function OnGUI () {
@@ -51,6 +64,8 @@ function OnGUI () {
 
 	// Create one Group to contain both images , the first two numbers define the on screen placement
 	GUI.Label(Rect(10, 50, 256, 32), "Jugador (" + playerEnergy + "/" + 100 + ")");
+	GUI.Label(Rect(10, 80, 256, 32), "Kills: " + kills);
+	GUI.Label(Rect(10, 110, 256, 32), "Dinero: $" + playerMoney);
 	GUI.BeginGroup (Rect (10,10,256,32));
 	 
 		// Draw the background image
