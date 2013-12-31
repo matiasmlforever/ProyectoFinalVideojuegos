@@ -18,7 +18,6 @@ function Update () {
 			Destroy(gameObject);
 			Destroy(HPBAR);
 	}
-	
 }
 
 /*Funcion que toma la fuerza como magnitud, pierna/puño con la que fue golpeado y el punto de impacto*/

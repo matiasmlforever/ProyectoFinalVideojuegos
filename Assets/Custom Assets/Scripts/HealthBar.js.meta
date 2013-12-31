@@ -2,7 +2,9 @@ fileFormatVersion: 2
 guid: 28dfccc99e29a854f939a326f5e56ae1
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - bgImage: {fileID: 2800000, guid: 1b9083903f2745c41ab8fed911fbea5f, type: 3}
+  - fgImage: {fileID: 2800000, guid: 78f00edfcc4101c4e9266c6dea49efa4, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

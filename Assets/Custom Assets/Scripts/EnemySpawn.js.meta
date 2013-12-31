@@ -2,7 +2,12 @@ fileFormatVersion: 2
 guid: c73cc8c2d07bfd4408e1cbcbe6fb7249
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - enemy: {instanceID: 0}
+  - player1: {instanceID: 0}
+  - player2: {instanceID: 0}
+  - enemyHpBar: {fileID: 100000, guid: 55375c581eee22d48bbd59f580dad79d, type: 2}
+  - thisHpBar: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
