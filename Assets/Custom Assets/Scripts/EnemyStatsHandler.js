@@ -4,11 +4,14 @@
 public var max_hp:int = 100;
 public var current_hp:int;
 public var armor:int;
+public var coinProbability = 50;
 private var escala_local_barra:float=1;
 
 private var enemyHpBar:GameObject;
 private var hpbar:GameObject;
 private var la:EnemyHpBar;
+
+var painSound:AudioClip[];
 
 function Start () {
 	current_hp = max_hp;
@@ -29,9 +32,18 @@ function Update ()
 	//if(escala_local_barra!=1)HPBAR.transform.localScale.x = escala_local_barra;		
 	if(current_hp <= 0)//si baja de 0 se destruye el enemigo
 	{
-		GameObject.Find("HealthBar").GetComponent(HealthBar).kills ++;
-		Debug.Log("DESTRUCCIÓN Enemy("+GetInstanceID()+") Bar("+hpbar.GetInstanceID()+")");
-		//Destroy(hpbar.GetComponent(GUITexture));
+		GameObject.Find("HealthBar").GetComponent(HealthBar).kills ++; //aumentar el conteo de muertos en los stats
+		AudioSource.PlayClipAtPoint(painSound[Random.Range(0, painSound.length)], transform.position); // //sonido de muerte		
+		
+		var leaveCoin = Random.Range(0,100); Debug.Log("Deja moneda? (0,"+coinProbability+") -> " + leaveCoin);			
+
+		if(leaveCoin<=coinProbability)
+		{
+			var coinsObject = GameObject.Find("Coins");
+			var a = transform.rotation; a.y = 180; //FIX HORRIBLE					
+  		var coins = Instantiate(coinsObject, transform.position, a);  //instanciar la barra de vida
+		}
+		
 		la.DestroyBar();
 		Destroy(gameObject);			
 	}
