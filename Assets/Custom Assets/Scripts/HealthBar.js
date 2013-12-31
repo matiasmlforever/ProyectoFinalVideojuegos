@@ -5,7 +5,10 @@ var energyBar : GUIStyle ;
 var bgImage : Texture2D; //color dañado
 var fgImage : Texture2D; //color original
 static var playerEnergy = 100; 
-var gameOver : boolean = false; 
+var gameOver : boolean = false;
+
+//sonido
+var itemSound:AudioClip;
  
 function Start() {
 	playerEnergy = 98;
@@ -29,7 +32,9 @@ function changeHP(amount:int){
 	else
 		playerEnergy = tempEnergy;
 
+	AudioSource.PlayClipAtPoint(itemSound, transform.position);
 	Debug.Log("Modificando vida en ("+amount+")");	
+
 }
 
 function OnGUI () {

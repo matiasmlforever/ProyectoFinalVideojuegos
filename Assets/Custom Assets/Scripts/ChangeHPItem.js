@@ -2,6 +2,7 @@
 
 public var amount : int;
 var hpObject : GameObject;
+//sonidos
 
 function Start () {
 

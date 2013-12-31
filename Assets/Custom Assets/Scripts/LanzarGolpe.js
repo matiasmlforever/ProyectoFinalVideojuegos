@@ -8,7 +8,9 @@ private var personaje:PlayerMovement;
 
 //sonidos
 var punchSound:AudioClip;
+var punch2Sound:AudioClip;
 var kickSound:AudioClip;
+var kick2Sound:AudioClip;
 
 function Start () {
 
@@ -21,16 +23,16 @@ function Update () {
 		//INICIO DE PUÑETAZO
 		if(Input.GetKeyDown(KeyCode.U) || Input.GetKeyDown(KeyCode.I))//si apreta tecla U o I(puño alto)
 		{	
-			AudioSource.PlayClipAtPoint(punchSound, transform.position); //hacer sonar golpe puño
-		
 			var r_o_l_punch:int;
 			if(Input.GetKeyDown(KeyCode.U)){
 				Debug.Log("PUÑO IZQUIERDO");
 				r_o_l_punch = 1; //LEFT
+				AudioSource.PlayClipAtPoint(punchSound, transform.position); //hacer sonar golpe puño
 			}
 			else{
 				Debug.Log("PUÑO DERECHO"); 
 				r_o_l_punch=2; 
+				AudioSource.PlayClipAtPoint(punch2Sound, transform.position); //hacer sonar golpe puño 2
 			}//RIGHT
 		
 			var hit_punio : RaycastHit;
@@ -54,16 +56,17 @@ function Update () {
 		//INICIO PATADAS
 		if(Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K))//si apreta tecla J o K(patadas)
 		{	
-			AudioSource.PlayClipAtPoint(kickSound, transform.position); //hacer sonar golpe patada
 
 			var r_o_l_kick:int;
 			if(Input.GetKeyDown(KeyCode.J)){
 				Debug.Log("PATADA IZQUIERDA");
 				r_o_l_kick = 1; //LEFT
+				AudioSource.PlayClipAtPoint(kickSound, transform.position); //hacer sonar golpe patada
 			}
 			else{
 				Debug.Log("PATADA DERECHA"); 
 				r_o_l_kick = 2; //RIGHT
+				AudioSource.PlayClipAtPoint(kick2Sound, transform.position); //hacer sonar golpe patada 2
 			}//RIGHT
 			var hit_kick : RaycastHit;
 			var lugar_origen_low = Vector3(transform.position.x,transform.position.y,transform.position.z);
