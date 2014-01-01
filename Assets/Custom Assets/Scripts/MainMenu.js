@@ -43,7 +43,7 @@ function OnGUI ()
 function MainMenu()
 {		
 	var acumV = 200;
-	GUI.Box(Rect (paddingLeft - 10, 10, paddingLeft + 20, boxHeight), "Bienvenido el juego NONAME", titleStyle);
+	GUI.Box(Rect (paddingLeft - 10, 10, paddingLeft + 20, boxHeight), "Bienvenido el juego NerdLES", titleStyle);
 	GUI.DrawTexture( Rect(paddingLeft + 140, 70, 100 , 100), gameIcon);
 
     if (GUI.Button(Rect(paddingLeft, acumV, paddingLeft,40), "Jugar"))
@@ -84,7 +84,8 @@ function PlayMenu()
 
     if (GUI.Button (Rect(paddingLeft, acumV, paddingLeft,40), "Empezar Stage 1"))
     {        
-        Application.LoadLevel("Stage01_Calle");
+        //Application.LoadLevel("Stage01_Calle");
+        Application.LoadLevel("CharSelect");
     }
 
     acumV += 50;
