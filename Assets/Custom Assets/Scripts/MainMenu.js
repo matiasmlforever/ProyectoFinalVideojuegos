@@ -87,6 +87,12 @@ function PlayMenu()
         //Application.LoadLevel("Stage01_Calle");
         Application.LoadLevel("CharSelect");
     }
+    
+    if (GUI.Button (Rect(paddingLeft, acumV + 60, paddingLeft,40), "Empezar Stage 2"))
+    {        
+        //Application.LoadLevel("Stage01_Calle");
+        Application.LoadLevel("Stage02_Estadio");
+    }
 
     acumV += 50;
 
