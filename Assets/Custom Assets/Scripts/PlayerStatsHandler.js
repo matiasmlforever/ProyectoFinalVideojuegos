@@ -30,7 +30,7 @@ public function takeHit(fuerza:float,punto_impacto:Vector3)
 	
 	var high_low_modifier:float = 1;
 	Debug.Log("TAKING HIT");
-	//Debug.Log(fuerza);
+	Debug.Log(fuerza);
 	//Debug.Log(punto_impacto);
 	
 	//distingue la altura a la que recibe el golpe
@@ -51,12 +51,19 @@ public function takeHit(fuerza:float,punto_impacto:Vector3)
 	
 	if(result_damage <= 0) result_damage = 0; 
 	//realiza el descuento del impacto sobre el HP enemigo
-	current_hp=current_hp-(result_damage);
+	Debug.Log("restar vida del player");
+	Debug.Log(result_damage.ToString());
+	
 	//HPBAR.GetComponent(GUIText).guiText.text=gameObject.name;//cambia identificador en la gui
 	
-	var hit_proportion:float = fuerza/max_hp;
-	escala_local_barra=HPBAR.transform.localScale.x-(hit_proportion*0.5);//dismunuye la barra en la GUI TODO:ARREGLAR	
+	var hit_proportion:float = result_damage/max_hp;
+	escala_local_barra=HPBAR.transform.localScale.x+(hit_proportion*0.5);//dismunuye la barra en la GUI TODO:ARREGLAR	
 	Debug.Log(current_hp);
+	current_hp=current_hp-(result_damage);
+	if(current_hp <= 0){
+		current_hp = 0;
+		//EL JUGADOR PERDIO TODA LA VIDA. GG!
+	}
 	
 	
 }
