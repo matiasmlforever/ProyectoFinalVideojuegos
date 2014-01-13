@@ -21,7 +21,7 @@ function Start () {
 
   hpbar = Instantiate(enemyHpBar, transform.position, transform.rotation);  //instanciar la barra de vida
 
-  Debug.Log(">>>>>>> Enemy("+GetInstanceID()+") Bar("+hpbar.GetInstanceID()+")");
+  //Debug.Log(">>>>>>> Enemy("+GetInstanceID()+") Bar("+hpbar.GetInstanceID()+")");
   la = hpbar.GetComponent(EnemyHpBar); 
 
   la.target = transform; //hacer que la barra de vida siga la posición del enemigo
@@ -35,7 +35,7 @@ function Update ()
 		GameObject.Find("HealthBar").GetComponent(HealthBar).kills ++; //aumentar el conteo de muertos en los stats
 		AudioSource.PlayClipAtPoint(painSound[Random.Range(0, painSound.length)], transform.position); // //sonido de muerte		
 		
-		var leaveCoin = Random.Range(0,100); Debug.Log("Deja moneda? (0,"+coinProbability+") -> " + leaveCoin);			
+		var leaveCoin = Random.Range(0,100); //Debug.Log("Deja moneda? (0,"+coinProbability+") -> " + leaveCoin);			
 
 		if(leaveCoin<=coinProbability)
 		{
@@ -77,7 +77,7 @@ public function takeHit(fuerza:float, r_o_l:int, punto_impacto:Vector3)
 	hpbar.guiTexture.pixelInset = Rect (-50, -60, current_hp, 8);
 	
 	
-	Debug.Log(debugMsg);
+	//Debug.Log(debugMsg);
 }
 
 public function getCurrentHP()

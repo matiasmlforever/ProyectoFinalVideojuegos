@@ -3,6 +3,7 @@ public var p1_gui: GameObject;
 public var p2_gui: GameObject;
 public var selected: int; // 1 o 2
 public var base_color:Color;
+
 function Start () {
 	var p1_texture:GUITexture; 
 	p1_texture = p1_gui.GetComponent("GUITexture");
