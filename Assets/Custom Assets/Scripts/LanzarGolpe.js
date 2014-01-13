@@ -21,7 +21,7 @@ function Update () {
 	if(!personaje.blocking)
 	{
 		//INICIO DE PUÑETAZO
-		if(Input.GetKeyDown(KeyCode.U) || Input.GetKeyDown(KeyCode.I))//si apreta tecla U o I(puño alto)
+		if(Input.GetKeyDown(KeyCode.U))// || Input.GetKeyDown(KeyCode.I))//si apreta tecla U o I(puño alto)
 		{	
 			var r_o_l_punch:int;
 			if(Input.GetKeyDown(KeyCode.U)){
@@ -54,7 +54,7 @@ function Update () {
 		}//FIN DE PUÑETAZO
 		
 		//INICIO PATADAS
-		if(Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K))//si apreta tecla J o K(patadas)
+		if(Input.GetKeyDown(KeyCode.J))// || Input.GetKeyDown(KeyCode.K))//si apreta tecla J o K(patadas)
 		{	
 
 			var r_o_l_kick:int;

@@ -11,6 +11,7 @@ var facingLeft = true;
 var agachado = false;
 public var blocking = false;
 private var sprite:SpriteRenderer;
+private var ani:Animator;
 
 //sonidos
 var jumpSound:AudioClip;
@@ -20,7 +21,8 @@ var footstepSound:AudioClip;
 
 function Start()
 {
-	sprite = gameObject.GetComponentInChildren(SpriteRenderer);			
+	sprite = gameObject.GetComponentInChildren(SpriteRenderer);
+	ani = gameObject.GetComponentInChildren(Animator);			
 }
 
 function Update() {
@@ -60,7 +62,7 @@ function Update() {
 		sprite.color= Color.white;
 	}
 	
-	/*INPUT AGACHA AL PERSONAJE*/
+	/*
 	if(Input.GetKey(KeyCode.H))
 	{
 		agachado = true;
@@ -71,6 +73,7 @@ function Update() {
 		agachado=false;
 	}
 	//else agachado = true;
+	
 	
 	//AGACHA EL GAMEOBJECT
 	if(agachado)
@@ -87,6 +90,8 @@ function Update() {
 	//CONTROLA MOVIMIENTO
 	var controller : CharacterController = GetComponent(CharacterController);
 	if (controller.isGrounded && !blocking) {
+		ani.SetBool("jumpin",false);//no salta
+		ani.SetBool("blokin",false);//no bloquea
 		// We are grounded, so recalculate
 		// move direction directly from axes
 		moveDirection = Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
