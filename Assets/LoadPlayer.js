@@ -1,7 +1,10 @@
 ﻿#pragma strict
+
 public var jugador1_prefab: GameObject;
 public var jugador2_prefab: GameObject;
+
 function Start () {
+
 	if(PlayerPrefs.GetInt("pj") != 0)
 	{
 		if(PlayerPrefs.GetInt("pj") == 1)
@@ -17,6 +20,8 @@ function Start () {
 			
 		}
 	}
+	else //por mientras, para poder probar el stage sin tener que empezar en el menu principal siempre ... por defecto usa el  player1
+		GameObject.Instantiate(jugador1_prefab,transform.position,transform.rotation);
 }
 
 function Update () {

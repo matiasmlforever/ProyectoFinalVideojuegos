@@ -15,9 +15,10 @@ var kills : int = 0;
 var itemSound:AudioClip;
 var coinsSound:AudioClip;
 var lostSound:AudioClip;
+var damageSound:AudioClip;
  
 function Start() {
-	playerEnergy = 98;
+	playerEnergy = 100;
 }
  
 function Update() {
@@ -38,7 +39,11 @@ function changeHP(amount:int){
 	else
 		playerEnergy = tempEnergy;
 
-	AudioSource.PlayClipAtPoint(itemSound, transform.position);
+	if(amount > 0)
+		AudioSource.PlayClipAtPoint(itemSound, transform.position);
+	else
+		AudioSource.PlayClipAtPoint(damageSound, transform.position);
+	
 	Debug.Log("Modificando vida en (" + amount + ")");	
 
 }
@@ -48,7 +53,7 @@ function changeMoney(amount:int)
 	var tempMoney = playerMoney + amount;
 	playerMoney = tempMoney;
 	AudioSource.PlayClipAtPoint(coinsSound, transform.position);
-	Debug.Log("Modificando dinero en (" + amount + ")");	
+	//Debug.Log("Modificando dinero en (" + amount + ")");	
 }
 
 function OnGUI () {
