@@ -16,15 +16,20 @@
 	
 	function Start() {
 		x2 = transform.position.x;
-		player1 = GameObject.Find("3d Chileno");
+		//player1 = GameObject.Find("3d Chileno");
+		player1 = GameObject.FindGameObjectWithTag("Player");
+		var curTransform : Transform;
+		
+		curTransform = gameObject.GetComponent(Transform);
 	}
 
 	function Update() {
 		// The step size is equal to speed times frame time.
 		var step = speed * Time.deltaTime;
 		
+		var other : EnemyStatsHandler = gameObject.GetComponent(EnemyStatsHandler);
 		// si la vida esta llena camina tranquilo
-		if(this.GetComponent(EnemyStatsHandler).lleno){
+		if(other.lleno()){
 			if(this.transform.position != Vector3(1448,3501,-4668) && flag1 == 0){ //si no ha llegado al cruce del mapa
 				transform.position = Vector3.MoveTowards(transform.position, Vector3(1448,3501,-4668), step);
 				if(this.transform.position == Vector3(1448,3501,-4668))
@@ -38,11 +43,12 @@
 		}
 		//si le pegaron
 		else{
-		
+			//Debug.Log("enemigo esta dañado");
 		// Move our position a step closer to the target.
 		if(( 6 > Mathf.Abs(player1.transform.position.x - transform.position.x))
 		&& 1 > Mathf.Abs(player1.transform.position.z - transform.position.z))
 		{
+			
 			
 		}else{
 			transform.position = Vector3.MoveTowards(transform.position, player1.transform.position, step);

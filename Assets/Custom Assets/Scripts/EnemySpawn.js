@@ -27,7 +27,7 @@ function Update () {
         Then set the wait_time to a random float number between the min_wait_time and max_wait_time (Note: We add0.1 because the max in random.range
         is exclusive and in order to get the max value as a result the max must be greater.
         */
-        if(Random.Range(0,100)==1)
+        if(Random.Range(0,300)==1)
         //if(Random.Range(0,20)==1)
         {
             var clone : GameObject;

@@ -21,7 +21,7 @@ function Update () {
 	if(!personaje.blocking)
 	{
 		//INICIO DE PUÑETAZO
-		if(Input.GetKeyDown(KeyCode.U) || Input.GetKeyDown(KeyCode.I))//si apreta tecla U o I(puño alto)
+		if(Input.GetKeyDown(KeyCode.U))// || Input.GetKeyDown(KeyCode.I))//si apreta tecla U o I(puño alto)
 		{	
 			var r_o_l_punch:int;
 			if(Input.GetKeyDown(KeyCode.U)){
@@ -43,7 +43,7 @@ function Update () {
 			{
 				if (hit_punio.rigidbody != null && (hit_punio.collider.tag =="golpeable"))
 				{
-					Debug.Log("Hay receptor de puño");
+					//Debug.Log("Hay receptor de puño");
 					//hit_alto.rigidbody.AddForce(Vector3.right * fuerza_golpe);
 					hit_punio.rigidbody.AddForceAtPosition((transform.localScale.x)*Vector3.left * fuerza_punio,hit_punio.point);
 					//Debug.Log(hit_punio.collider.gameObject.name);
@@ -54,7 +54,7 @@ function Update () {
 		}//FIN DE PUÑETAZO
 		
 		//INICIO PATADAS
-		if(Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K))//si apreta tecla J o K(patadas)
+		if(Input.GetKeyDown(KeyCode.J))// || Input.GetKeyDown(KeyCode.K))//si apreta tecla J o K(patadas)
 		{	
 
 			var r_o_l_kick:int;
@@ -75,7 +75,7 @@ function Update () {
 			{
 				if (hit_kick.rigidbody != null && (hit_kick.collider.tag =="golpeable"))
 				{
-					Debug.Log("Hay receptor de patada");
+					//Debug.Log("Hay receptor de patada");
 					hit_kick.rigidbody.AddForceAtPosition((transform.localScale.x)*Vector3.left * fuerza_patada,hit_kick.point);
 					//Debug.Log(hit_kick.collider.gameObject.name);
 					enemigo_receptor = hit_kick.collider.gameObject.GetComponent(EnemyStatsHandler);
