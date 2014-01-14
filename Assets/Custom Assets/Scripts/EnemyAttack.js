@@ -5,12 +5,16 @@ public var fuerza_patada:float;
 public var raycast_distance:float;
 private var enemigo_receptor:PlayerStatsHandler;
 private var personaje:EnemyMovement;
+var coolDownPeriodInSeconds:float;
+var timeStamp:float;
 
 public var player1 : GameObject;
 
 function Start () {
 	//while(player1 == null)	{
 		player1 = GameObject.FindGameObjectWithTag("Player");
+		timeStamp = Time.time + coolDownPeriodInSeconds;
+		coolDownPeriodInSeconds=0.3;
 	//}
 }
 
@@ -22,6 +26,11 @@ function Update () {
 	&& 8 > Mathf.Abs(player1.transform.position.x - transform.position.x))
 	&& 1 > Mathf.Abs(player1.transform.position.z - transform.position.z))
 	{
+	
+		if (timeStamp <= Time.time)
+		{
+			timeStamp = Time.time + coolDownPeriodInSeconds;
+			
 			Debug.Log("Enemigo lanza golpe");
 			
 			var hit_punio : RaycastHit;
@@ -42,5 +51,6 @@ function Update () {
 					hp.changeHP(-fuerza_punio); 
 				}
 			}
+		}
 	}
 }

@@ -8,16 +8,22 @@
 	var facingLeft = true;
 	var agachado = false;
 	var player1 : GameObject;
+	var togo:GameObject;
+	var i:int;
 		
 	// Speed in units per sec.
 	var speed: float;
 	var x2: float;
-	var flag1: int = 0;
+	var flag1: int = 1;
 	
 	function Start() {
 		x2 = transform.position.x;
 		//player1 = GameObject.Find("3d Chileno");
 		player1 = GameObject.FindGameObjectWithTag("Player");
+		
+		i=1;
+		togo = GameObject.Find("togo"+i);
+		
 		var curTransform : Transform;
 		
 		curTransform = gameObject.GetComponent(Transform);
@@ -30,16 +36,17 @@
 		var other : EnemyStatsHandler = gameObject.GetComponent(EnemyStatsHandler);
 		// si la vida esta llena camina tranquilo
 		if(other.lleno()){
-			if(this.transform.position != Vector3(1448,3501,-4668) && flag1 == 0){ //si no ha llegado al cruce del mapa
-				transform.position = Vector3.MoveTowards(transform.position, Vector3(1448,3501,-4668), step);
-				if(this.transform.position == Vector3(1448,3501,-4668))
-					flag1 = 1;
-			}else{ // si ya llego al cruce
-				transform.position = Vector3.MoveTowards(transform.position, Vector3(1660,3501,-4668), step);
-				if(this.transform.position.x > 1655){
+			
+			if ( Vector3.Distance(togo.transform.position, transform.position) < 2.0 ){
+				Debug.Log("llego a "+i);
+				if(i==2){ //si llega al togo2 se destrulle
 					Destroy (gameObject);
 				}
+				i++;
+				togo = GameObject.Find("togo"+i);
 			}
+			transform.position = Vector3.MoveTowards(transform.position, togo.transform.position, step);
+
 		}
 		//si le pegaron
 		else{
