@@ -125,25 +125,20 @@ function ControlsMenu()
         acumV += 50;
 
         GUI.DrawTexture(Rect(paddingLeft + 10, acumV, 40, 40), uKey);
-        GUI.DrawTexture(Rect(paddingLeft + 10 + 50, acumV, 40, 40), iKey);
-        GUI.Label (Rect (paddingLeft + 220, acumV, 200, 40), "Combo alto y bajo ", centeredText);
+        GUI.Label (Rect (paddingLeft + 220, acumV, 200, 40), "Golpe puño ", centeredText);
         acumV += 50;
 
         GUI.DrawTexture(Rect(paddingLeft + 10, acumV, 40, 40), jKey);
-        GUI.DrawTexture(Rect(paddingLeft + 10 + 50, acumV, 40, 40), kKey);
-        GUI.Label (Rect (paddingLeft + 220, acumV, 200, 40), "Patada alta y baja ", centeredText);
+        GUI.Label (Rect (paddingLeft + 220, acumV, 200, 40), "Golpe patada ", centeredText);
         acumV += 50;
 
         GUI.DrawTexture(Rect(paddingLeft + 10, acumV, 40, 40), yKey);
         GUI.Label (Rect (paddingLeft + 220, acumV, 200, 40), "Cubrirse o bloquear golpes ", centeredText);
         acumV += 50;
 
-        GUI.DrawTexture(Rect(paddingLeft + 10, acumV, 40, 40), hKey);
-        GUI.Label (Rect (paddingLeft + 220, acumV, 200, 40), "Agacharse ", centeredText);
-        acumV += 50;
-
         GUI.DrawTexture(Rect(paddingLeft + 10, acumV, 200, 40), spaceKey);
         GUI.Label (Rect (paddingLeft + 220, acumV, 200, 40), "Saltar ", centeredText);
+                
         acumV += 50;
 
     if (GUI.Button (Rect(paddingLeft, boxHeight - 40, paddingLeft,40), "Volver a menú principal"))
