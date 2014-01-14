@@ -5,8 +5,8 @@ var energyBar : GUIStyle ;
 var bgImage : Texture2D; //color dañado
 var fgImage : Texture2D; //color original
 
-static var playerEnergy = 100; 
-static var playerMoney = 1000; 
+public static var playerEnergy = 100; 
+public static var playerMoney = 1000; 
 
 var gameOver : boolean = false;
 var kills : int = 0;
@@ -16,17 +16,17 @@ var itemSound:AudioClip;
 var coinsSound:AudioClip;
 var lostSound:AudioClip;
 var damageSound:AudioClip;
- 
+
 function Start() {
 	playerEnergy = 100;
 }
  
 function Update() {
 	if(Input.GetKey(KeyCode.Z))
-		playerEnergy -= 1 ;
+		changeHP(-1);
 
 	if(Input.GetKey(KeyCode.X))
-		playerEnergy -= 10 ;
+		changeHP(-10);
 }
  
 function changeHP(amount:int){
@@ -43,9 +43,8 @@ function changeHP(amount:int){
 		AudioSource.PlayClipAtPoint(itemSound, transform.position);
 	else
 		AudioSource.PlayClipAtPoint(damageSound, transform.position);
-	
-	Debug.Log("Modificando vida en (" + amount + ")");	
 
+	Debug.Log("Modificando vida en (" + amount + ")");	
 }
 
 function changeMoney(amount:int)
