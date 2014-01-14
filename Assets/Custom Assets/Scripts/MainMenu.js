@@ -84,8 +84,8 @@ function PlayMenu()
 
     if (GUI.Button (Rect(paddingLeft, acumV, paddingLeft,40), "Empezar Stage 1"))
     {        
-        //Application.LoadLevel("Stage01_Calle");
-        Application.LoadLevel("CharSelect");
+        Application.LoadLevel("Stage01_Calle");
+        //Application.LoadLevel("CharSelect");
     }
     
     if (GUI.Button (Rect(paddingLeft, acumV + 60, paddingLeft,40), "Empezar Stage 2"))
