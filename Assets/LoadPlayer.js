@@ -55,7 +55,7 @@ function OnGUI () {
 
 	var playerCoordsLog = "(" + playerCoords.x + ", " + playerCoords.y + ", " + playerCoords.z + ")";
 	
-	if(timeOnStage < 2){
+	if(timeOnStage < 5){
 
 		GUI.Box(Rect (10, Screen.height - 100, Screen.width - 20, 100 -10), initText , dialogStyle);	
 	}		
