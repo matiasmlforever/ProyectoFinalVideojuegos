@@ -19,8 +19,6 @@
 	
 	function Start() {
 		x2 = transform.position.x;
-		//player1 = GameObject.Find("3d Chileno");
-		player1 = GameObject.FindGameObjectWithTag("Player");
 		
 		i=1;
 		togo = GameObject.Find("togo"+i);
@@ -31,6 +29,9 @@
 	}
 
 	function Update() {
+		if(!player1){
+			player1 = GameObject.FindGameObjectWithTag("Player");
+		}
 		// The step size is equal to speed times frame time.
 		var step = speed * Time.deltaTime;
 		

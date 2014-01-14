@@ -10,17 +10,17 @@ var timeStamp:float;
 
 public var player1 : GameObject;
 
-function Start () {
-	//while(player1 == null)	{
-		player1 = GameObject.FindGameObjectWithTag("Player");
-		timeStamp = Time.time + coolDownPeriodInSeconds;
-		coolDownPeriodInSeconds=0.3;
-	//}
+function Start () {	
+	timeStamp = Time.time + coolDownPeriodInSeconds;
+	coolDownPeriodInSeconds=0.3;
 }
 
 function Update () {
 	var lugar_origen = Vector3(transform.position.x,transform.position.y,transform.position.z);
-	
+	if(!player1){
+		player1 = GameObject.FindGameObjectWithTag("Player");
+	}
+
 	//Debug.Log(player1.transform.position.x.ToString());
 	if(( 1 < Mathf.Abs(player1.transform.position.x - transform.position.x) 
 	&& 8 > Mathf.Abs(player1.transform.position.x - transform.position.x))

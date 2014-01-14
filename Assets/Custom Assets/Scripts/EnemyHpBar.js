@@ -5,17 +5,16 @@ var cam : Camera;
 var Jugador: GameObject;
 
 function Start () {
-	while(true)
-	{
-		//reviso e instancio el objeto jugador
-		Jugador = GameObject.FindGameObjectWithTag("Player"); //Debug.Log("El jugador es: " + Jugador);		
-		cam = Jugador.transform.FindChild("GameCamera").camera;
-		if(Jugador != null) break;
-	}
+	
 }
 
 function Update () 
 { 
+	if(!Jugador){
+		Jugador = GameObject.FindGameObjectWithTag("Player");
+		cam = Jugador.transform.FindChild("GameCamera").camera;
+	}
+
 	if(target != null)
 	{
 	var wantedPos = cam.WorldToViewportPoint (target.position); 
