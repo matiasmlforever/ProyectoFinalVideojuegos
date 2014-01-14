@@ -10,6 +10,7 @@
 	var player1 : GameObject;
 	var togo:GameObject;
 	var i:int;
+	var barra : EnemyHpBar; //This should be were Script B goes
 		
 	// Speed in units per sec.
 	var speed: float;
@@ -18,8 +19,6 @@
 	
 	function Start() {
 		x2 = transform.position.x;
-		//player1 = GameObject.Find("3d Chileno");
-		player1 = GameObject.FindGameObjectWithTag("Player");
 		
 		i=1;
 		togo = GameObject.Find("togo"+i);
@@ -30,22 +29,26 @@
 	}
 
 	function Update() {
+		if(!player1){
+			player1 = GameObject.FindGameObjectWithTag("Player");
+		}
 		// The step size is equal to speed times frame time.
 		var step = speed * Time.deltaTime;
 		
 		var other : EnemyStatsHandler = gameObject.GetComponent(EnemyStatsHandler);
 		// si la vida esta llena camina tranquilo
 		if(other.lleno()){
-			
+			// si llega al punto correspondiente
 			if ( Vector3.Distance(togo.transform.position, transform.position) < 2.0 ){
 				Debug.Log("llego a "+i);
-				if(i==2){ //si llega al togo2 se destrulle
-					Destroy (gameObject);
+				if(i==6){ //si llega al togo6 se destrulle
+					//barra.DestroyBar();
+					Destroy(gameObject);
 				}
-				i++;
+				i++; // pasa al siguiente punto
 				togo = GameObject.Find("togo"+i);
 			}
-			transform.position = Vector3.MoveTowards(transform.position, togo.transform.position, step);
+			if(GameObject!=null && togo!=null) transform.position = Vector3.MoveTowards(transform.position, togo.transform.position, step);
 
 		}
 		//si le pegaron
