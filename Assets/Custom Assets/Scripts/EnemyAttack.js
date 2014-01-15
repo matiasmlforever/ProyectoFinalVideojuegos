@@ -12,7 +12,7 @@ public var player1 : GameObject;
 
 function Start () {	
 	timeStamp = Time.time + coolDownPeriodInSeconds;
-	coolDownPeriodInSeconds=0.05;
+	coolDownPeriodInSeconds=0.1;
 }
 
 function Update () {
