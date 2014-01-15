@@ -1,6 +1,7 @@
 ﻿#pragma strict
 public var hp:int = 100;
 public var limite:int = -300;
+public var magnitud_golpe:float=0.01;
 public var completo:GameObject; 
 function Start () {
 
@@ -23,7 +24,7 @@ function Update () {
 function FixedUpdate()
 {
 
-if ( rigidbody.velocity.magnitude > 0.02 )
+if ( rigidbody.velocity.magnitude > magnitud_golpe )
  {
  	renderer.material.color = Color.red;
  	//Debug.Log(rigidbody.velocity.magnitude);

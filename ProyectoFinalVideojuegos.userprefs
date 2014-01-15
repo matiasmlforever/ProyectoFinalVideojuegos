@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Custom Assets\Scripts\EnemyAttack.js">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\BreakItem.js">
     <Files>
-      <File FileName="Assets\Custom Assets\Scripts\EnemyAttack.js" Line="15" Column="29" />
+      <File FileName="Assets\Custom Assets\Scripts\LanzarGolpe.js" Line="39" Column="89" />
+      <File FileName="Assets\BreakItem.js" Line="27" Column="51" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

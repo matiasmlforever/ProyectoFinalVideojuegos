@@ -2,10 +2,13 @@
 public var fuerza_punio: float;
 public var fuerza_patada:float;
 public var raycast_distance:float;
+public var low_offset:float=0;
+public var high_offset:float=0;
 public var isCrouching:int = 0;
 private var enemigo_receptor:EnemyStatsHandler;
 private var enemigo_receptor2:EnemyStatsHandler2;
 private var personaje:PlayerMovement;
+
 
 //sonidos
 var punchSound:AudioClip;
@@ -33,7 +36,7 @@ function Update () {
 		
 			var hit_punio : RaycastHit;
 			
-			var lugar_origen_alto = Vector3(transform.position.x,transform.position.y,transform.position.z);
+			var lugar_origen_alto = Vector3(transform.position.x,transform.position.y+high_offset,transform.position.z);
 			
 			if (Physics.Raycast(lugar_origen_alto,(transform.localScale.x)*Vector3.left,hit_punio,raycast_distance)) 
 			{
@@ -75,7 +78,7 @@ function Update () {
 				AudioSource.PlayClipAtPoint(kickSound, transform.position); //hacer sonar golpe patada
 			}
 			var hit_kick : RaycastHit;
-			var lugar_origen_low = Vector3(transform.position.x,transform.position.y,transform.position.z);
+			var lugar_origen_low = Vector3(transform.position.x,transform.position.y-low_offset,transform.position.z);
 			
 			if (Physics.Raycast(lugar_origen_low,(transform.localScale.x)*Vector3.left,hit_kick,raycast_distance)) 
 			{
