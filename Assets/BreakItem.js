@@ -15,6 +15,7 @@ function Update () {
 			Instantiate(completo, transform.position, transform.rotation); 
 		}
 		Destroy(this.gameObject);
+		//Destroy(transform.parent.FindChild("Rueda"));
 		
 	}	
 }

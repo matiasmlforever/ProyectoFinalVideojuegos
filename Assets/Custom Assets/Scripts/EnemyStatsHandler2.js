@@ -7,7 +7,7 @@ public var armor:int;
 public var coinProbability = 50;
 private var escala_local_barra:float=1;
 
- var enemyHpBar:GameObject;
+private var enemyHpBar:GameObject;
 private var hpbar:GameObject;
 private var la:EnemyHpBar;
 private var sprite:SpriteRenderer;
@@ -16,17 +16,16 @@ private var changeTime:float;
 
 var painSound:AudioClip[];
 
-function Start () {	
+function Start () {
 	current_hp = max_hp;
 	
 	var cam = GameObject.Find("GameCamera"); //tomar la cámara para que la barra de vida siga al enemigo acorde a la pantalla       
-	//var enemyHpBar = GameObject.Find("EnemyHpBar");
+	var enemyHpBar = GameObject.Find("EnemyHpBar");
 	hpbar = enemyHpBar;
   la = hpbar.GetComponent(EnemyHpBar); 
   
   sprite = gameObject.GetComponentInChildren(SpriteRenderer);//para ir cambiando el color cuando se le golpea
   //Debug.Log(sprite);
-  Debug.Log("Se crea enemigo " + GetInstanceID() +  " con barra " + enemyHpBar.GetInstanceID());
 }
 
 function getHpBar(){
@@ -41,6 +40,8 @@ function Update ()
 	{
 		GameObject.Find("HealthBar").GetComponent(HealthBar).kills ++; //aumentar el conteo de muertos en los stats
 		AudioSource.PlayClipAtPoint(painSound[Random.Range(0, painSound.length)], transform.position); // //sonido de muerte		
+		
+		/*
 		var leaveCoin = Random.Range(0,100); //Debug.Log("Deja moneda? (0,"+coinProbability+") -> " + leaveCoin);			
 
 		if(leaveCoin<=coinProbability)
@@ -49,7 +50,7 @@ function Update ()
 			var a = transform.rotation; a.y = 180; //FIX HORRIBLE					
   		var coins = Instantiate(coinsObject, transform.position, a);  //instanciar la barra de vida
 		}
-
+		*/
 		Destroy(gameObject);			
 	}
 	

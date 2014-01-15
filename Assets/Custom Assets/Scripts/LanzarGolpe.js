@@ -4,6 +4,7 @@ public var fuerza_patada:float;
 public var raycast_distance:float;
 public var isCrouching:int = 0;
 private var enemigo_receptor:EnemyStatsHandler;
+private var enemigo_receptor2:EnemyStatsHandler2;
 private var personaje:PlayerMovement;
 
 //sonidos
@@ -29,11 +30,6 @@ function Update () {
 				r_o_l_punch = 1; //LEFT
 				AudioSource.PlayClipAtPoint(punchSound, transform.position); //hacer sonar golpe puño
 			}
-			else{
-				//Debug.Log("PUÑO DERECHO"); 
-				r_o_l_punch=2; 
-				AudioSource.PlayClipAtPoint(punch2Sound, transform.position); //hacer sonar golpe puño 2
-			}//RIGHT
 		
 			var hit_punio : RaycastHit;
 			
@@ -47,8 +43,23 @@ function Update () {
 					//hit_alto.rigidbody.AddForce(Vector3.right * fuerza_golpe);
 					hit_punio.rigidbody.AddForceAtPosition((transform.localScale.x)*Vector3.left * fuerza_punio,hit_punio.point);
 					//Debug.Log(hit_punio.collider.gameObject.name);
+					/*
 					enemigo_receptor = hit_punio.collider.gameObject.GetComponent(EnemyStatsHandler);
 					enemigo_receptor.takeHit(fuerza_punio,r_o_l_punch,hit_punio.point);
+					*/
+					
+					enemigo_receptor = hit_punio.collider.gameObject.GetComponent(EnemyStatsHandler);
+					if(enemigo_receptor==null)
+					{
+						enemigo_receptor2 = hit_punio.collider.gameObject.GetComponent(EnemyStatsHandler2);
+						enemigo_receptor2.takeHit(fuerza_punio,r_o_l_punch,hit_punio.point);
+					}
+					else
+					{
+						enemigo_receptor.takeHit(fuerza_punio,r_o_l_punch,hit_punio.point);
+					}
+					
+					
 				}
 			}
 		}//FIN DE PUÑETAZO
@@ -63,11 +74,6 @@ function Update () {
 				r_o_l_kick = 1; //LEFT
 				AudioSource.PlayClipAtPoint(kickSound, transform.position); //hacer sonar golpe patada
 			}
-			else{
-				//Debug.Log("PATADA DERECHA"); 
-				r_o_l_kick = 2; //RIGHT
-				AudioSource.PlayClipAtPoint(kick2Sound, transform.position); //hacer sonar golpe patada 2
-			}//RIGHT
 			var hit_kick : RaycastHit;
 			var lugar_origen_low = Vector3(transform.position.x,transform.position.y,transform.position.z);
 			
@@ -79,7 +85,15 @@ function Update () {
 					hit_kick.rigidbody.AddForceAtPosition((transform.localScale.x)*Vector3.left * fuerza_patada,hit_kick.point);
 					//Debug.Log(hit_kick.collider.gameObject.name);
 					enemigo_receptor = hit_kick.collider.gameObject.GetComponent(EnemyStatsHandler);
-					enemigo_receptor.takeHit(fuerza_patada,r_o_l_kick,hit_kick.point);
+					if(enemigo_receptor==null)
+					{
+						enemigo_receptor2 = hit_kick.collider.gameObject.GetComponent(EnemyStatsHandler2);
+						enemigo_receptor2.takeHit(fuerza_patada,r_o_l_kick,hit_kick.point);
+					}
+					else
+					{
+						enemigo_receptor.takeHit(fuerza_patada,r_o_l_kick,hit_kick.point);
+					}
 				}
 			}
 		}//FIN PATADAS
