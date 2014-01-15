@@ -51,6 +51,7 @@
      <Compile Include="Assets\Custom Assets\Scripts\ChangeHPItem.js" />
      <Compile Include="Assets\Custom Assets\Scripts\Coins.js" />
      <Compile Include="Assets\Custom Assets\Scripts\EnemyAttack.js" />
+     <Compile Include="Assets\Custom Assets\Scripts\EnemyAttack2.js" />
      <Compile Include="Assets\Custom Assets\Scripts\EnemyHpBar.js" />
      <Compile Include="Assets\Custom Assets\Scripts\EnemyMovement.js" />
      <Compile Include="Assets\Custom Assets\Scripts\EnemyMovement2.js" />
