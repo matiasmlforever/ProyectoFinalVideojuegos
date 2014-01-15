@@ -7,7 +7,7 @@ public var armor:int;
 public var coinProbability = 50;
 private var escala_local_barra:float=1;
 
-private var enemyHpBar:GameObject;
+ var enemyHpBar:GameObject;
 private var hpbar:GameObject;
 private var la:EnemyHpBar;
 private var sprite:SpriteRenderer;
@@ -16,16 +16,17 @@ private var changeTime:float;
 
 var painSound:AudioClip[];
 
-function Start () {
+function Start () {	
 	current_hp = max_hp;
 	
 	var cam = GameObject.Find("GameCamera"); //tomar la cámara para que la barra de vida siga al enemigo acorde a la pantalla       
-	var enemyHpBar = GameObject.Find("EnemyHpBar");
+	//var enemyHpBar = GameObject.Find("EnemyHpBar");
 	hpbar = enemyHpBar;
   la = hpbar.GetComponent(EnemyHpBar); 
   
   sprite = gameObject.GetComponentInChildren(SpriteRenderer);//para ir cambiando el color cuando se le golpea
   //Debug.Log(sprite);
+  Debug.Log("Se crea enemigo " + GetInstanceID() +  " con barra " + enemyHpBar.GetInstanceID());
 }
 
 function getHpBar(){

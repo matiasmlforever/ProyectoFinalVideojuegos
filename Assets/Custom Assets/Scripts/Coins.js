@@ -1,6 +1,6 @@
 ﻿#pragma strict
 
-var amount = 100;
+var amount = 400;
 var hpObject : GameObject;
 
 function Start () {

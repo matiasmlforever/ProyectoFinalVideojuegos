@@ -44,6 +44,7 @@ function Update () {
 
 function OnGUI () {
 	var currentHp = playerStatsScript.playerEnergy;
+	var currentMoney = playerStatsScript.playerMoney;
 	var timeOnStage = Time.timeSinceLevelLoad;
 
 	if(!player)
@@ -59,7 +60,7 @@ function OnGUI () {
 
 	var playerCoordsLog = "(" + playerCoords.x + ", " + playerCoords.y + ", " + playerCoords.z + ")";
 	
-	if(timeOnStage < 5){
+	if(timeOnStage < 1){
 
 		GUI.Box(Rect (10, Screen.height - 100, Screen.width - 20, 100 -10), initText , dialogStyle);	
 	}		
@@ -79,10 +80,26 @@ function OnGUI () {
 	else if(playerCoords.x > 1096 && playerCoords.x < 1145 && playerCoords.z > -4774 && playerCoords.z < -4724){	
 		GUI.Box(Rect (10, Screen.height - 100, Screen.width - 20, 100 -10), "Al parecer esta calle no tiene salida :/", dialogStyle);
 	}
+	else if(playerCoords.x > 1637 && playerCoords.x < 1652 && playerCoords.z > -4684 && playerCoords.z < -4654){	
+		if(currentMoney < 10000){
+			var moneyText = "Hey! La entrada al estadio cuesta $10000 y tú solo tienes " + currentMoney + "\nQuizás deberías ir a darte unas vueltas más.";
+			GUI.Box(Rect (10, Screen.height - 100, Screen.width - 20, 100 -10), moneyText , dialogStyle);
+			}			
+		else{
+			dialogStyle.alignment = TextAnchor.UpperCenter;
+			dialogStyle.padding.top = 30;
+
+			GUI.Box(Rect (10, Screen.height/2, Screen.width - 20, 170 -10), "Felicitaciones! Es hora del partido! ", dialogStyle);
+			if(GUI.Button(Rect(Screen.width/2 - 100, Screen.height/2 + 70 , 170, 40), "Entrar al estadio"))
+				Application.LoadLevel("Stage02_Estadio");
+		} 
+			
+	}
 	
 
-	GUI.Box(Rect (Screen.width - 210, 10, 200, 50), playerCoordsLog);	
+	//GUI.Box(Rect (Screen.width - 210, 10, 200, 50), playerCoordsLog);	
 }
+
 
 function resetDialogTime(){
 	dialogTime = 0;
