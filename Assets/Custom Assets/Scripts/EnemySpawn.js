@@ -5,7 +5,6 @@ public var player2 : GameObject;
 
 //Minimum time to wait before spawning a random object (in seconds)
 var min_wait_time = 5;
-private var count = 10;
 
 //max time to wait before spawning a random object (in seconds)
 var max_wait_time = 15;
@@ -24,15 +23,8 @@ function Update () {
 
 	if(start_spawn == true)
     {           
-        if(count>0){
-            Debug.Log(count>0);
-            if(Random.Range(0,50)==1){
-                clone = Instantiate(enemy, transform.position, transform.rotation);            
-                count --;
-            }
-            
-        }
-        
+        if(Random.Range(0,200)==1)
+            clone = Instantiate(enemy, transform.position, transform.rotation);
     }
 
 }

@@ -65,7 +65,7 @@ function MainMenu()
     } 
     print(a + " a " + selectedOption);
 
-    GUI.Box(Rect (Screen.width - 210, 10, 200, 50), "Selected: " + selectedOption + " ----- " + menuOptions[selectedOption]);
+    //GUI.Box(Rect (Screen.width - 210, 10, 200, 50), "Selected: " + selectedOption + " ----- " + menuOptions[selectedOption]);
 
 	var acumV = 200;
 	GUI.Box(Rect (paddingLeft - 10, 10, paddingLeft + 20, boxHeight), "Bienvenido el juego NerdLES", titleStyle);
