@@ -63,9 +63,11 @@
      <Compile Include="Assets\Custom Assets\Scripts\PlayerMovement.js" />
      <Compile Include="Assets\Custom Assets\Scripts\PlayerStatsHandler.js" />
      <Compile Include="Assets\GasHandler.js" />
+     <Compile Include="Assets\Goles.js" />
      <Compile Include="Assets\JointerBreak.js" />
      <Compile Include="Assets\LoadPlayer.js" />
      <Compile Include="Assets\PosteLuz.js" />
+     <Compile Include="Assets\TiempoPartido.js" />
      <Compile Include="Assets\feed_animator.js" />
      <Compile Include="Assets\selectPlayer.js" />
   </ItemGroup>
