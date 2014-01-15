@@ -19,14 +19,20 @@ function Start ()
 }
 
 function Update () {
-
+var clone : GameObject;
+if(min_wait_time>1){
+    clone = Instantiate(enemy, transform.position, transform.rotation);   
+    min_wait_time --;
+}
+            
+/*
 	if(start_spawn == true)
     {   
         /*
         Call the spawn function with the id set to a random number between 0 and the length of the obj array -1 (since arrays start at 0)
         Then set the wait_time to a random float number between the min_wait_time and max_wait_time (Note: We add0.1 because the max in random.range
         is exclusive and in order to get the max value as a result the max must be greater.
-        */
+        
         if(Random.Range(0,100)==1)
         //if(Random.Range(0,20)==1)
         {
@@ -35,5 +41,5 @@ function Update () {
 		}
 
     }
-
+*/
 }

@@ -11,8 +11,7 @@ private var dialogTime:float;
 
 function Start () {
 	player = GameObject.FindGameObjectWithTag("Player");
-	playerStats = GameObject.Find("HealthBar");	
-	playerStatsScript = playerStats.GetComponent(HealthBar);
+	
 	dialogTime = 0;
 
 	if(PlayerPrefs.GetInt("pj") != 0)
@@ -35,6 +34,10 @@ function Start () {
 }
 
 function Update () {
+	if(!playerStats){
+		playerStats = GameObject.Find("HealthBar");	
+		playerStatsScript = playerStats.GetComponent(HealthBar);
+	}
 
 }
 
