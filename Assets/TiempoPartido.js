@@ -12,6 +12,11 @@ function Start () {
 }
 
 function Update () {
+
+	if(minutos >=90)
+	{
+		Application.LoadLevel("YouWin");
+	}
 	//segundos_totales++;
 	segundos = segundos + aceleracion* Mathf.CeilToInt(Time.deltaTime);
 	//erdeltatiempo = Time.deltaTime;

@@ -1,7 +1,7 @@
 ﻿#pragma strict
 
 public var jugador1_prefab: GameObject;
-public var jugador2_prefab: GameObject;
+//public var jugador2_prefab: GameObject;
 var dialogStyle : GUIStyle;
 
 private var player : GameObject;
@@ -10,11 +10,7 @@ private var playerStatsScript : HealthBar;
 private var dialogTime:float; 
 
 function Start () {
-	player = GameObject.FindGameObjectWithTag("Player");
-	playerStats = GameObject.Find("HealthBar");	
-	playerStatsScript = playerStats.GetComponent(HealthBar);
-	dialogTime = 0;
-
+	/*
 	if(PlayerPrefs.GetInt("pj") != 0)
 	{
 		if(PlayerPrefs.GetInt("pj") == 1)
@@ -32,6 +28,14 @@ function Start () {
 	}
 	else //por mientras, para poder probar el stage sin tener que empezar en el menu principal siempre ... por defecto usa el  player1
 		GameObject.Instantiate(jugador1_prefab,transform.position,transform.rotation);
+	*/
+	
+	GameObject.Instantiate(jugador1_prefab,transform.position,transform.rotation);
+	
+	player = GameObject.FindGameObjectWithTag("Player");
+	playerStats = GameObject.Find("HealthBar");	
+	playerStatsScript = playerStats.GetComponent(HealthBar);
+	dialogTime = 0;
 }
 
 function Update () {
