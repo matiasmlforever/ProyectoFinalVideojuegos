@@ -56,6 +56,7 @@
      <Compile Include="Assets\Custom Assets\Scripts\EnemyMovement2.js" />
      <Compile Include="Assets\Custom Assets\Scripts\EnemySpawn.js" />
      <Compile Include="Assets\Custom Assets\Scripts\EnemyStatsHandler.js" />
+     <Compile Include="Assets\Custom Assets\Scripts\EnemyStatsHandler2.js" />
      <Compile Include="Assets\Custom Assets\Scripts\GameCamera.js" />
      <Compile Include="Assets\Custom Assets\Scripts\Heal.js" />
      <Compile Include="Assets\Custom Assets\Scripts\HealthBar.js" />

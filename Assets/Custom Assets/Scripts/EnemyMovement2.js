@@ -10,7 +10,7 @@
 	var player1 : GameObject;
 	var togo:GameObject;
 	var i:int;
-	var barra : EnemyHpBar; //This should be were Script B goes
+	var barra : GameObject; //This should be were Script B goes
 		
 	// Speed in units per sec.
 	var speed: float;

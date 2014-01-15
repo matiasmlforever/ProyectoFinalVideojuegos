@@ -40,6 +40,8 @@ function Update ()
 	{
 		GameObject.Find("HealthBar").GetComponent(HealthBar).kills ++; //aumentar el conteo de muertos en los stats
 		AudioSource.PlayClipAtPoint(painSound[Random.Range(0, painSound.length)], transform.position); // //sonido de muerte		
+		
+		/*
 		var leaveCoin = Random.Range(0,100); //Debug.Log("Deja moneda? (0,"+coinProbability+") -> " + leaveCoin);			
 
 		if(leaveCoin<=coinProbability)
@@ -48,7 +50,7 @@ function Update ()
 			var a = transform.rotation; a.y = 180; //FIX HORRIBLE					
   		var coins = Instantiate(coinsObject, transform.position, a);  //instanciar la barra de vida
 		}
-
+		*/
 		Destroy(gameObject);			
 	}
 	
