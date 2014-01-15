@@ -96,7 +96,7 @@ function OnGUI () {
 	}
 	
 
-	GUI.Box(Rect (Screen.width - 210, 10, 200, 50), playerCoordsLog);	
+	//GUI.Box(Rect (Screen.width - 210, 10, 200, 50), playerCoordsLog);	
 }
 
 

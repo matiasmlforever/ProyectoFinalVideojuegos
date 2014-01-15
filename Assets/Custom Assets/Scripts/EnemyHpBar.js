@@ -5,7 +5,7 @@ var cam : Camera;
 var Jugador: GameObject;
 
 function Start () {
-	//Debug.Log("Se crea Barra " + GetInstanceID());
+	Debug.Log("Se crea Barra " + GetInstanceID());
 }
 
 function Update () 
