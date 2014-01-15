@@ -21,7 +21,7 @@
 	function Start() {
 		x2 = transform.position.x;
 		
-		i=6;
+		i=1;
 		togo = GameObject.Find("togo"+i);
 		
 		var curTransform : Transform;
@@ -35,6 +35,9 @@
 			//barra = gameObject.GetComponent(EnemyStatsHandler).getHpBar(); 
 			//barra.target = transform;
 		}
+		
+		//verifica que enemyspawn es
+		if(transform.position.z>-4600){ i=5; togo = GameObject.Find("togo"+i);}
 		// The step size is equal to speed times frame time.
 		var step = speed * Time.deltaTime;
 		

@@ -12,7 +12,7 @@ public var player1 : GameObject;
 
 function Start () {	
 	timeStamp = Time.time + coolDownPeriodInSeconds;
-	coolDownPeriodInSeconds=0.3;
+	coolDownPeriodInSeconds=0.05;
 }
 
 function Update () {
@@ -23,7 +23,7 @@ function Update () {
 
 	//Debug.Log(player1.transform.position.x.ToString());
 	if(( 1 < Mathf.Abs(player1.transform.position.x - transform.position.x) 
-	&& 8 > Mathf.Abs(player1.transform.position.x - transform.position.x))
+	&& 10 > Mathf.Abs(player1.transform.position.x - transform.position.x))
 	&& 1 > Mathf.Abs(player1.transform.position.z - transform.position.z))
 	{
 	

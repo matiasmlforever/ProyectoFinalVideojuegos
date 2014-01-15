@@ -23,7 +23,7 @@ function Update () {
 
 	if(start_spawn == true)
     {           
-        if(Random.Range(0,200)==1)
+        if(Random.Range(0,250)==1)
             clone = Instantiate(enemy, transform.position, transform.rotation);
     }
 
