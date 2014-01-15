@@ -26,8 +26,8 @@ function FixedUpdate()
 if ( rigidbody.velocity.magnitude > 0.02 )
  {
  	renderer.material.color = Color.red;
- 	Debug.Log(rigidbody.velocity.magnitude);
- 	Debug.Log(hp);
+ 	//Debug.Log(rigidbody.velocity.magnitude);
+ 	//Debug.Log(hp);
  	hp= hp - (rigidbody.velocity.magnitude+1);
  	
  }

@@ -28,8 +28,18 @@ var kKey : Texture2D;
 var yKey : Texture2D;
 var hKey : Texture2D;
 
+var menuOptions = new String[4];
+var selectedOption:int = 0;
+
 function Start ()
 {   
+    menuOptions[0] = "Jugar";
+    menuOptions[1] = "Controles";
+    menuOptions[2] = "Créditos";
+    menuOptions[3] = "Salir";
+
+    selectedOption = 0;
+
     this.currentGUIMethod = MainMenu; // primera llamada a MainMenu con todas las opciones
 }
 
@@ -42,10 +52,26 @@ function OnGUI ()
  
 function MainMenu()
 {		
+    var a = "De " + selectedOption;
+
+    if(Input.GetKeyUp(KeyCode.DownArrow)){
+        if(selectedOption < 3)
+            selectedOption += 1;
+    }
+
+    if(Input.GetKeyUp(KeyCode.UpArrow)){
+        if(selectedOption > 0)
+            selectedOption -= 1;
+    } 
+    print(a + " a " + selectedOption);
+
+    GUI.Box(Rect (Screen.width - 210, 10, 200, 50), "Selected: " + selectedOption + " ----- " + menuOptions[selectedOption]);
+
 	var acumV = 200;
 	GUI.Box(Rect (paddingLeft - 10, 10, paddingLeft + 20, boxHeight), "Bienvenido el juego NerdLES", titleStyle);
 	GUI.DrawTexture( Rect(paddingLeft + 140, 70, 100 , 100), gameIcon);
 
+    GUI.SetNextControlName (menuOptions[0]);
     if (GUI.Button(Rect(paddingLeft, acumV, paddingLeft,40), "Jugar"))
     {
         Debug.Log ("Comenzar juego");	
@@ -53,7 +79,7 @@ function MainMenu()
     }
     
     acumV += 50;
-
+    GUI.SetNextControlName (menuOptions[1]);
     if (GUI.Button(Rect(paddingLeft, acumV, paddingLeft, 40), "Controles"))
     {
         Debug.Log ("Mostrar controles");	
@@ -62,6 +88,7 @@ function MainMenu()
 
     acumV += 50;
 
+    GUI.SetNextControlName (menuOptions[2]);
     if (GUI.Button(Rect(paddingLeft, acumV, paddingLeft, 40), "Créditos"))
     {
         Debug.Log ("Mostrar créditos");	
@@ -69,12 +96,14 @@ function MainMenu()
     }
 
     acumV += 50;
-
+    GUI.SetNextControlName (menuOptions[3]);
     if (GUI.Button(Rect(paddingLeft, boxHeight - 40, paddingLeft, 40), "Salir"))
     {
         Debug.Log ("Saliendo del juego");	
         Application.Quit();
     }
+
+    GUI.FocusControl(menuOptions[selectedOption]);
 }
  
 function PlayMenu()

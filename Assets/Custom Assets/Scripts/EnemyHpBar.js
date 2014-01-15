@@ -5,7 +5,7 @@ var cam : Camera;
 var Jugador: GameObject;
 
 function Start () {
-	
+	//Debug.Log("Se crea Barra " + GetInstanceID());
 }
 
 function Update () 
@@ -25,6 +25,6 @@ function Update ()
 
 function DestroyBar()
 {
-	//Debug.Log("Destruyendo Barra " + GetInstanceID());
+	Debug.Log("Destruyendo Barra " + GetInstanceID());
 	Destroy(gameObject);
 }

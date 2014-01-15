@@ -10,7 +10,8 @@
 	var player1 : GameObject;
 	var togo:GameObject;
 	var i:int;
-	var barra : EnemyHpBar; //This should be were Script B goes
+	var barra : GameObject; //This should be were Script B goes
+	private var la:EnemyHpBar;
 		
 	// Speed in units per sec.
 	var speed: float;
@@ -20,7 +21,7 @@
 	function Start() {
 		x2 = transform.position.x;
 		
-		i=1;
+		i=6;
 		togo = GameObject.Find("togo"+i);
 		
 		var curTransform : Transform;
@@ -31,6 +32,8 @@
 	function Update() {
 		if(!player1){
 			player1 = GameObject.FindGameObjectWithTag("Player");
+			//barra = gameObject.GetComponent(EnemyStatsHandler).getHpBar(); 
+			//barra.target = transform;
 		}
 		// The step size is equal to speed times frame time.
 		var step = speed * Time.deltaTime;
@@ -40,7 +43,7 @@
 		if(other.lleno()){
 			// si llega al punto correspondiente
 			if ( Vector3.Distance(togo.transform.position, transform.position) < 2.0 ){
-				Debug.Log("llego a "+i);
+				Debug.Log(gameObject + " llego a "+i);
 				if(i==6){ //si llega al togo6 se destrulle
 					//barra.DestroyBar();
 					Destroy(gameObject);

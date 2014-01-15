@@ -21,16 +21,15 @@ function Start () {
 	
 	var cam = GameObject.Find("GameCamera"); //tomar la cámara para que la barra de vida siga al enemigo acorde a la pantalla       
 	var enemyHpBar = GameObject.Find("EnemyHpBar");
-	
-  hpbar = Instantiate(enemyHpBar, transform.position, transform.rotation);  //instanciar la barra de vida
-
-  //Debug.Log(">>>>>>> Enemy("+GetInstanceID()+") Bar("+hpbar.GetInstanceID()+")");
+	hpbar = enemyHpBar;
   la = hpbar.GetComponent(EnemyHpBar); 
-
-  la.target = transform; //hacer que la barra de vida siga la posición del enemigo
   
   sprite = gameObject.GetComponentInChildren(SpriteRenderer);//para ir cambiando el color cuando se le golpea
-  Debug.Log(sprite);
+  //Debug.Log(sprite);
+}
+
+function getHpBar(){
+	return la;
 }
 
 function Update () 
@@ -51,7 +50,6 @@ function Update ()
   		var coins = Instantiate(coinsObject, transform.position, a);  //instanciar la barra de vida
 		}
 		
-		la.DestroyBar();
 		Destroy(gameObject);			
 	}
 	
@@ -91,7 +89,8 @@ public function takeHit(fuerza:float, r_o_l:int, punto_impacto:Vector3)
 	
 	//hpbar.transform.localScale = Vector3.zero;
 	//Se reduce la barra de vida del enemigo al nuevo largo =current_hp y alto = 8
-	hpbar.guiTexture.pixelInset = Rect (-50, -60, current_hp, 8);
+	if(hpbar)
+		hpbar.guiTexture.pixelInset = Rect (-50, -60, current_hp, 8);
 	
 	//Debug.Log(debugMsg);
 }
