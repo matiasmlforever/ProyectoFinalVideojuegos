@@ -1,32 +1,45 @@
 fileFormatVersion: 2
 guid: f6d19dbe24f10cd4889afb75debe5b00
 TextureImporter:
-  serializedVersion: 2
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
+    sRGBTexture: 1
     linearTexture: 0
-    correctGamma: 0
     fadeOut: 0
     borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
     mipMapFadeDistanceStart: 1
     mipMapFadeDistanceEnd: 3
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: .25
+    heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
-  generateCubemap: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
   seamlessCubemap: 0
   textureFormat: -1
   maxTextureSize: 1024
   textureSettings:
-    filterMode: -1
+    serializedVersion: 2
+    filterMode: 1
     aniso: 1
-    mipBias: -1
-    wrapMode: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -34,14 +47,70 @@ TextureImporter:
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: .5, y: .5}
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
-  buildTargetSettings: []
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: player 2 para animar_0
+    - serializedVersion: 2
+      name: player 2 para animar_0
       rect:
         serializedVersion: 2
         x: 39
@@ -50,7 +119,19 @@ TextureImporter:
         height: 97
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: player 2 para animar_1
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 039d895a421d4c730800000000000000
+      internalID: 4018566722848610608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player 2 para animar_1
       rect:
         serializedVersion: 2
         x: 531
@@ -59,7 +140,19 @@ TextureImporter:
         height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: player 2 para animar_2
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0629ae2aee1859990800000000000000
+      internalID: -7379849552441208224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player 2 para animar_2
       rect:
         serializedVersion: 2
         x: 188
@@ -68,7 +161,19 @@ TextureImporter:
         height: 184
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: player 2 para animar_3
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 926734ce246ca5cd0800000000000000
+      internalID: -2568522646727461335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player 2 para animar_3
       rect:
         serializedVersion: 2
         x: 394
@@ -76,8 +181,20 @@ TextureImporter:
         width: 47
         height: 108
       alignment: 2
-      pivot: {x: .5, y: 1}
-    - name: player 2 para animar_4
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee932a4676d303970800000000000000
+      internalID: 8732547191750670830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player 2 para animar_4
       rect:
         serializedVersion: 2
         x: 82
@@ -85,8 +202,20 @@ TextureImporter:
         width: 62
         height: 49
       alignment: 0
-      pivot: {x: .5, y: .5}
-    - name: player 2 para animar_5
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f164c00c53e3f1920800000000000000
+      internalID: 2963155480409294367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player 2 para animar_5
       rect:
         serializedVersion: 2
         x: 282
@@ -94,8 +223,20 @@ TextureImporter:
         width: 53
         height: 32
       alignment: 0
-      pivot: {x: .5, y: .5}
-    - name: player 2 para animar_6
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe9fa80f986531960800000000000000
+      internalID: 7571490548986083823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player 2 para animar_6
       rect:
         serializedVersion: 2
         x: 576
@@ -103,6 +244,38 @@ TextureImporter:
         width: 80
         height: 104
       alignment: 0
-      pivot: {x: .5, y: .5}
-  spritePackingTag: 
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75d133a546b844610800000000000000
+      internalID: 1604560630377028951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      player 2 para animar_0: 4018566722848610608
+      player 2 para animar_1: -7379849552441208224
+      player 2 para animar_2: -2568522646727461335
+      player 2 para animar_3: 8732547191750670830
+      player 2 para animar_4: 2963155480409294367
+      player 2 para animar_5: 7571490548986083823
+      player 2 para animar_6: 1604560630377028951
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 
