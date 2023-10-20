@@ -42,7 +42,7 @@ public class EnemyMovement2 : MonoBehaviour
 
         /*
         // si la vida esta llena camina tranquilo
-        if (other.lleno())
+        if (other.Lleno())
         {
             // si llega al punto correspondiente
             if (Vector3.Distance(togo.transform.position, transform.position) < 2.0)

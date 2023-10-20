@@ -26,7 +26,7 @@ public class EnemyStatsHandler2 : MonoBehaviour
         hpbar = enemyHpBar;
         la = hpbar.GetComponent<EnemyHpBar>();
 
-        sprite = gameObject.GetComponentInChildren<SpriteRenderer); // To change color when hit
+        sprite = gameObject.GetComponentInChildren<SpriteRenderer>(); // To change color when hit
     }
 
     public EnemyHpBar GetHpBar()
@@ -59,7 +59,7 @@ public class EnemyStatsHandler2 : MonoBehaviour
         }
     }
 
-    public void TakeHit(float fuerza, int r_o_l, Vector3 punto_impacto)
+    public void TakeHit(int fuerza, int r_o_l, Vector3 punto_impacto)
     {
         sprite.color = Color.red;
 
@@ -82,7 +82,11 @@ public class EnemyStatsHandler2 : MonoBehaviour
         debugMsg += current_hp + " ]";
 
         if (hpbar)
-            hpbar.guiTexture.pixelInset = new Rect(-50, -60, current_hp, 8);
+        {
+            Debug.Log("Commented out guitTexture.pixelInset");
+            //hpbar.guiTexture.pixelInset = new Rect(-50, -60, current_hp, 8);
+        }
+
 
         // Debug.Log(debugMsg);
     }

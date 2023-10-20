@@ -27,7 +27,7 @@ public class Coins : MonoBehaviour
 
             if (stats != null)
             {
-                stats.changeMoney(amount);
+                stats.ChangeMoney(amount);
             }
 
             Destroy(gameObject);

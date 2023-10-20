@@ -46,7 +46,7 @@ public class EnemyAttack2 : MonoBehaviour
                         Debug.Log("Enemigo golpea a " + hit_punio.collider.gameObject.name + " con fuerza [[[ " + fuerza_punio + " ]]");
                         var hpObject = GameObject.Find("HealthBar");
                         var hp = hpObject.GetComponent<HealthBar>();
-                        hp.changeHP(-fuerza_punio);
+                        hp.ChangeHP((int)-fuerza_punio);
                     }
                 }
             }

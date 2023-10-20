@@ -1,23 +1,5 @@
 ﻿using UnityEngine;
 
-public class ChangeHPItem : MonoBehaviour
-{
-    public int amount;
-    private GameObject hpObject;
-
-    void Start()
-    {
-        // Initialization code, if needed.
-    }
-
-    void Update()
-    {
-        // Update code, if needed.
-    }
-
-    void OnTriggerEnter(Collider other)
-    {using UnityEngine;
-
     public class ChangeHPItem : MonoBehaviour
     {
         public int amount;
@@ -45,7 +27,7 @@ public class ChangeHPItem : MonoBehaviour
 
                 if (hp != null)
                 {
-                    hp.changeHP(amount);
+                    hp.ChangeHP(amount);
                 }
 
                 Destroy(gameObject);
@@ -53,7 +35,7 @@ public class ChangeHPItem : MonoBehaviour
         }
     }
 
-        if (other.gameObject.CompareTag("Player")))
+        /*if (other.gameObject.CompareTag("Player")))
         {
             // If the player collects the health item
             hpObject = GameObject.Find("HealthBar");
@@ -67,6 +49,4 @@ public class ChangeHPItem : MonoBehaviour
             }
 
             Destroy(gameObject);
-        }
-    }
-}
+        }*/

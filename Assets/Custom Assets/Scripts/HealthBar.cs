@@ -32,7 +32,7 @@ public class HealthBar : MonoBehaviour
             ChangeHP(-10);
     }
 
-    private void ChangeHP(int amount)
+    public void ChangeHP(int amount)
     {
         int tempEnergy = playerEnergy + amount;
 
@@ -83,7 +83,7 @@ public class HealthBar : MonoBehaviour
 
         GUI.BeginGroup(new Rect(10, 10, 256, 32));
         GUI.Box(new Rect(0, 0, 256, 32), bgImage, energyBar); // Red background bar
-        GUI.BeginGroup(new Rect(0, 0, playerEnergy / 100.0f * 256, 32);
+        GUI.BeginGroup(new Rect(0, 0, playerEnergy / 100.0f * 256, 32));
         GUI.Box(new Rect(0, 0, 256, 32), fgImage, energyBar); // Green life bar
         GUI.EndGroup();
         GUI.EndGroup();

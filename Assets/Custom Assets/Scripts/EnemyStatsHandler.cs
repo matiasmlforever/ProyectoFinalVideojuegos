@@ -59,7 +59,7 @@ public class EnemyStatsHandler : MonoBehaviour
         }
     }
 
-    public void TakeHit(float fuerza, int r_o_l, Vector3 punto_impacto)
+    public void TakeHit(int fuerza, int r_o_l, Vector3 punto_impacto)
     {
         sprite.color = Color.red;
         changeTime = Time.time;
@@ -84,7 +84,8 @@ public class EnemyStatsHandler : MonoBehaviour
 
         if (enemyHpBar)
         {
-            enemyHpBar.GetComponent<GUITexture>().pixelInset = new Rect(-50, -60, current_hp, 8);
+            Debug.Log("Commented out guitTexture.pixelInset");
+            // enemyHpBar.GetComponent<GUITexture>().pixelInset = new Rect(-50, -60, current_hp, 8);
         }
     }
 

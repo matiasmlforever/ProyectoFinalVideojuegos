@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CharacterControllerMovement : MonoBehaviour
+public class EnemyMovement : MonoBehaviour
 {
     public bool facingLeft = true;
     public bool agachado = false;
@@ -47,7 +47,7 @@ public class CharacterControllerMovement : MonoBehaviour
         EnemyStatsHandler other = gameObject.GetComponent<EnemyStatsHandler>();
 
         // si la vida esta llena camina tranquilo
-        if (other.lleno())
+        if (other.Lleno())
         {
             // si llega al punto correspondiente
             if (Vector3.Distance(togo.transform.position, transform.position) < 2.0)

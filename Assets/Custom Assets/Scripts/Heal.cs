@@ -7,12 +7,10 @@ public class Heal : MonoBehaviour
 
     void Start()
     {
-
     }
 
     void Update()
     {
-
     }
 
     void OnTriggerEnter(Collider other)

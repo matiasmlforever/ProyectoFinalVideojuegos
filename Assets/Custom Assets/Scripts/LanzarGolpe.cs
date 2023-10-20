@@ -33,7 +33,7 @@ public class Combat : MonoBehaviour
             // INICIO DE PUÑETAZO
             if (Input.GetKeyDown(KeyCode.U))
             {
-                int r_o_l_punch;
+                int r_o_l_punch = 0;
 
                 if (Input.GetKeyDown(KeyCode.U))
                 {
@@ -55,11 +55,11 @@ public class Combat : MonoBehaviour
                         if (enemigo_receptor == null)
                         {
                             enemigo_receptor2 = hit_punio.collider.gameObject.GetComponent<EnemyStatsHandler2>();
-                            enemigo_receptor2.takeHit(fuerza_punio, r_o_l_punch, hit_punio.point);
+                            enemigo_receptor2.TakeHit((int)fuerza_punio, r_o_l_punch, hit_punio.point);
                         }
                         else
                         {
-                            enemigo_receptor.takeHit(fuerza_punio, r_o_l_punch, hit_punio.point);
+                            enemigo_receptor.TakeHit((int)fuerza_punio, r_o_l_punch, hit_punio.point);
                         }
                     }
                 }
@@ -68,7 +68,7 @@ public class Combat : MonoBehaviour
             // INICIO PATADAS
             if (Input.GetKeyDown(KeyCode.J))
             {
-                int r_o_l_kick;
+                int r_o_l_kick = 0;
 
                 if (Input.GetKeyDown(KeyCode.J))
                 {
@@ -89,11 +89,11 @@ public class Combat : MonoBehaviour
                         if (enemigo_receptor == null)
                         {
                             enemigo_receptor2 = hit_kick.collider.gameObject.GetComponent<EnemyStatsHandler2>();
-                            enemigo_receptor2.takeHit(fuerza_patada, r_o_l_kick, hit_kick.point);
+                            enemigo_receptor2.TakeHit((int)fuerza_patada, r_o_l_kick, hit_kick.point);
                         }
                         else
                         {
-                            enemigo_receptor.takeHit(fuerza_patada, r_o_l_kick, hit_kick.point);
+                            enemigo_receptor.TakeHit((int)fuerza_patada, r_o_l_kick, hit_kick.point);
                         }
                     }
                 }

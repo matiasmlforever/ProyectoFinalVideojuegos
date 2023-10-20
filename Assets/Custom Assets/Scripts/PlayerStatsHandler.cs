@@ -12,7 +12,7 @@ public class PlayerStatsHandler : MonoBehaviour
     void Start()
     {
         current_hp = max_hp;
-        HPBAR.GetComponent<GUIText>().text = gameObject.name; // Change identifier in the GUI
+        //HPBAR.GetComponent<GUIText>().text = gameObject.name; // Change identifier in the GUI
     }
 
     void Update()
@@ -73,7 +73,7 @@ public class PlayerStatsHandler : MonoBehaviour
         return current_hp;
     }
 
-    public void heal(int amount)
+    public void Heal(int amount)
     {
         float heal_proportion = amount / max_hp;
         escala_local_barra = HPBAR.transform.localScale.x + (heal_proportion * 0.5f);
